@@ -1,14 +1,11 @@
-import abc
+from abc import ABC, abstractmethod
 
-class Command(metaclass=abc.ABCMeta):
+
+class Command(ABC):
     """
-    Declare an interface for executing an operation.
+    The Command interface declares a method for executing a command.
     """
 
-    def __init__(self, receiver):
-        self._receiver = receiver
-
-    @abc.abstractmethod
-    def execute(self):
-        print("Execute!")
+    @abstractmethod
+    def execute(self) -> None:
         pass
