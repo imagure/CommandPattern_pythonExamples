@@ -28,12 +28,14 @@ def test2():
 	salad = Salad()  # receiver
 	command_salad = sdc(salad)  # concrete command
 
+	taco = Taco()  # receiver
+	command_taco = tc(taco)  # concrete command
+
 	meal_invoker = mi(command_sandwich)  # invoker
 	meal_invoker.invoke() # Starting the method calls
 
 	meal_invoker.add_command_to_list(command_salad)
-	meal_invoker.add_command_to_list(command_sandwich)
-	meal_invoker.add_command_to_list(command_salad)
+	meal_invoker.add_command_to_list(command_taco)
 	meal_invoker.execute_commands()
 
 if __name__ == '__main__':
